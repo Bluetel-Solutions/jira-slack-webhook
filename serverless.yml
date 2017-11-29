@@ -1,0 +1,21 @@
+service: jira-slack-webhook
+
+frameworkVersion: ">=1.1.0 <2.0.0"
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+  region: ${opt:region, 'eu-west-1'}
+  stage: ${opt:stage, 'dev'}
+  environment:
+    WEBHOOK_URLS: ${env:WEBHOOK_URLS, file(.config.yml):webhookUrls}
+    WEBHOOK_TITLE: ${env:WEBHOOK_TITLE, file(.config.yml):webhookTitle}
+
+functions:
+  webhook:
+    handler: index.webhook
+    events:
+      - http:
+          path: webhook
+          method: post
+
