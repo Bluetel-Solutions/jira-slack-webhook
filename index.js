@@ -29,7 +29,7 @@ module.exports.webhook = (event, context, callback) => {
   const user = new User(source.user)
 
   sendToAllSlacks({
-    text: process.env.WEBHOOK_TITLE,
+    text: `@channel - ${process.env.WEBHOOK_TITLE}`,
     attachments: [{
       color: "#00CF00",
       author_name: user.displayName,
