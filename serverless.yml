@@ -10,6 +10,7 @@ provider:
   environment:
     WEBHOOK_URLS: ${env:WEBHOOK_URLS, file(.config.yml):webhookUrls}
     WEBHOOK_TITLE: ${env:WEBHOOK_TITLE, file(.config.yml):webhookTitle}
+    WEBHOOK_MESSAGE: ${env:WEBHOOK_TITLE, file(.config.yml):webhookTitle, env:WEBHOOK_TITLE, file(.config.yml):webhookTitle}
 
 functions:
   webhook:
