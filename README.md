@@ -1,3 +1,9 @@
+# Deprecated
+
+This project has been superceded by the easier-to-use and more flexible chatops-webhook-proxy.  You can find that repository here: https://github.com/Bluetel-Solutions/chatops-webhook-proxy
+
+---
+
 # JIRA to Slack Webhook
 
 A simple Lambda picoservice for forwarding misc. webhooks from JIRA (e.g. those from Service Desk automation workflows)
